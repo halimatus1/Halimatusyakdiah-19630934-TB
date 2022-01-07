@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="kode" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[Select * from tiket where no_tiket = $P{kode}]]>
+	</queryString>
+	<field name="no_tiket" class="java.lang.Integer"/>
+	<field name="nama" class="java.lang.String"/>
+	<field name="id_penumpang" class="java.lang.Integer"/>
+	<field name="maskapai" class="java.lang.String"/>
+	<field name="kelas" class="java.lang.String"/>
+	<field name="op" class="java.lang.Double"/>
+	<field name="tujuan" class="java.lang.String"/>
+	<field name="lama" class="java.lang.Double"/>
+	<field name="tanggal" class="java.sql.Date"/>
+	<field name="pukul" class="java.lang.String"/>
+	<field name="total" class="java.lang.Double"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="32" y="30" width="483" height="49"/>
+				<textElement textAlignment="Center">
+					<font size="30"/>
+				</textElement>
+				<text><![CDATA[TIKET PESAWAT]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="99" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="20" width="142" height="20"/>
+				<textElement/>
+				<text><![CDATA[NO TIKET]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="142" y="20" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{no_tiket}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="142" y="40" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{nama}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="230" y="0" width="100" height="20"/>
+				<textElement>
+					<font fontName="Century751 BT" size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{maskapai}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="41" width="142" height="20"/>
+				<textElement/>
+				<text><![CDATA[NAMA PENUMPANG]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="0" y="79" width="121" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="121" y="79" width="100" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="221" y="79" width="109" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="330" y="79" width="125" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="455" y="79" width="100" height="20"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="79" width="121" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[ID PENUMPANG]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="121" y="79" width="100" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[KELAS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="221" y="79" width="109" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[TUJUAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="330" y="79" width="125" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[TANGGAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="455" y="79" width="100" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[JAM BERANGKAT]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="46" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="121" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="121" y="0" width="100" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="221" y="0" width="109" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="330" y="0" width="125" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="455" y="0" width="100" height="20" forecolor="#000000"/>
+			</rectangle>
+			<textField>
+				<reportElement x="0" y="0" width="121" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{id_penumpang}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="121" y="0" width="100" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{kelas}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="221" y="0" width="109" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{tujuan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="330" y="0" width="125" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{tanggal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="455" y="0" width="100" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{pukul}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="25" splitType="Stretch">
+			<staticText>
+				<reportElement x="355" y="0" width="100" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[PEMBAYARAN]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="455" y="0" width="100" height="20"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{total}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>
